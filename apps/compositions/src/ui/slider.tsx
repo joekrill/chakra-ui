@@ -1,5 +1,6 @@
 import { Slider as ChakraSlider, HStack } from "@chakra-ui/react"
 import * as React from "react"
+import { dataAttr } from "../../../../packages/react/src/utils"
 
 export interface SliderProps extends ChakraSlider.RootProps {
   marks?: Array<number | { value: number; label: React.ReactNode }>
@@ -30,7 +31,7 @@ export const Slider = React.forwardRef<HTMLDivElement, SliderProps>(
             <ChakraSlider.ValueText />
           </HStack>
         )}
-        <ChakraSlider.Control mb={hasMarkLabel ? "4" : undefined}>
+        <ChakraSlider.Control data-marks-labeled={dataAttr(hasMarkLabel)}>
           <ChakraSlider.Track>
             <ChakraSlider.Range />
           </ChakraSlider.Track>

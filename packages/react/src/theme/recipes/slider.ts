@@ -152,12 +152,26 @@ export const sliderSlotRecipe = defineSlotRecipe({
           left: "50%",
           translate: "-50% 0",
         },
+        markerGroup: {
+          bottom: "var(--slider-marker-inset)",
+          top: "var(--slider-marker-inset)",
+          left: "calc((var(--slider-thumb-size) - var(--slider-track-size)) / 2)",
+          width: "var(--slider-track-size)",
+        },
+        marker: {
+          marginLeft:
+            "calc((var(--slider-track-size) - var(--slider-marker-size)) / 2)",
+          flexDirection: "row",
+        },
       },
       horizontal: {
         control: {
           flexDirection: "row",
           width: "100%",
           minHeight: "var(--slider-thumb-size)",
+          "&[data-marks-labeled]": {
+            mb: 4,
+          },
         },
         track: {
           height: "var(--slider-track-size)",
